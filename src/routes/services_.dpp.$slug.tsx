@@ -31,8 +31,8 @@ export const Route = createFileRoute("/services_/dpp/$slug")({
 
 function DppDetail() {
   const { index } = Route.useLoaderData();
-  const group = dpp.groups[index];
-  const next = dpp.groups[(index + 1) % dpp.groups.length];
+  const group = dpp.groups[index]!;
+  const next = dpp.groups[(index + 1) % dpp.groups.length]!;
   return (
     <div>
       <section className="grid-bg border-b border-border">

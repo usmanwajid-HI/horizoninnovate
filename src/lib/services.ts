@@ -85,7 +85,7 @@ export const services: Service[] = [
   {
     id: "human-ai",
     number: "03",
-    title: "Human-Centric AI & Decision Support",
+    title: "Human-Centric AI",
     tagline:
       "Build AI systems people can understand, trust, and override — from cognitive task analysis to continuous human-AI teaming audits.",
     groups: [

@@ -142,7 +142,7 @@ function Contact() {
                       </option>
                       <option>Digital Product Passport</option>
                       <option>Data Space</option>
-                      <option>Human-Centric AI & Decision Support</option>
+                      <option>Human-Centric AI</option>
                       <option>Something else</option>
                     </select>
                   </div>

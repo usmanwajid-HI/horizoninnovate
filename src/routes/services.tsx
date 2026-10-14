@@ -9,13 +9,13 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Digital Product Passport, Data Space, and Human-Centric AI & Decision Support consultancy services from Horizon Innovate Ltd.",
+          "Digital Product Passport, Data Space, and Human-Centric AI consultancy services from Horizon Innovate Ltd.",
       },
       { property: "og:title", content: "Services — Horizon Innovate Ltd" },
       {
         property: "og:description",
         content:
-          "Digital Product Passport, Data Space, and Human-Centric AI & Decision Support consultancy services.",
+          "Digital Product Passport, Data Space, and Human-Centric AI consultancy services.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

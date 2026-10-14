@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { services } from "../lib/services";
 
 export const Route = createFileRoute("/services")({
@@ -57,21 +57,41 @@ function Services() {
               {service.tagline}
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {service.groups.map((group) => (
-                <div key={group.title} className="glow-card rounded-xl p-6">
-                  <h3 className="font-display text-base font-semibold leading-snug text-primary">
-                    {group.title}
-                  </h3>
-                  <ul className="mt-4 space-y-2.5">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/90">
-                        <Check size={16} className="mt-0.5 shrink-0 text-accent" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              {service.groups.map((group) => {
+                const body = (
+                  <>
+                    <h3 className="font-display text-base font-semibold leading-snug text-primary">
+                      {group.title}
+                    </h3>
+                    <ul className="mt-4 space-y-2.5">
+                      {group.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/90">
+                          <Check size={16} className="mt-0.5 shrink-0 text-accent" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                );
+                return group.slug ? (
+                  <Link
+                    key={group.title}
+                    to="/services/dpp/$slug"
+                    params={{ slug: group.slug }}
+                    className="glow-card group flex flex-col rounded-xl p-6"
+                  >
+                    {body}
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-primary">
+                      Learn more
+                      <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ) : (
+                  <div key={group.title} className="glow-card rounded-xl p-6">
+                    {body}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

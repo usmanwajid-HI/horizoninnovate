@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ServicesHumanCentricAiRouteImport } from './routes/services_.human-centric-ai'
 import { Route as ServicesDataSpaceSlugRouteImport } from './routes/services_.data-space.$slug'
 import { Route as ServicesDppSlugRouteImport } from './routes/services_.dpp.$slug'
 
@@ -30,6 +31,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesHumanCentricAiRoute = ServicesHumanCentricAiRouteImport.update({
+  id: '/services_/human-centric-ai',
+  path: '/services/human-centric-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesDataSpaceSlugRoute = ServicesDataSpaceSlugRouteImport.update({
   id: '/services_/data-space/$slug',
   path: '/services/data-space/$slug',
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/services/human-centric-ai': typeof ServicesHumanCentricAiRoute
   '/services/data-space/$slug': typeof ServicesDataSpaceSlugRoute
   '/services/dpp/$slug': typeof ServicesDppSlugRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/services/human-centric-ai': typeof ServicesHumanCentricAiRoute
   '/services/data-space/$slug': typeof ServicesDataSpaceSlugRoute
   '/services/dpp/$slug': typeof ServicesDppSlugRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
+  '/services_/human-centric-ai': typeof ServicesHumanCentricAiRoute
   '/services_/data-space/$slug': typeof ServicesDataSpaceSlugRoute
   '/services_/dpp/$slug': typeof ServicesDppSlugRoute
 }
@@ -69,6 +78,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
+    | '/services/human-centric-ai'
     | '/services/data-space/$slug'
     | '/services/dpp/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -76,6 +86,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
+    | '/services/human-centric-ai'
     | '/services/data-space/$slug'
     | '/services/dpp/$slug'
   id:
@@ -83,6 +94,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/services'
+    | '/services_/human-centric-ai'
     | '/services_/data-space/$slug'
     | '/services_/dpp/$slug'
   fileRoutesById: FileRoutesById
@@ -91,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
+  ServicesHumanCentricAiRoute: typeof ServicesHumanCentricAiRoute
   ServicesDataSpaceSlugRoute: typeof ServicesDataSpaceSlugRoute
   ServicesDppSlugRoute: typeof ServicesDppSlugRoute
 }
@@ -118,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services_/human-centric-ai': {
+      id: '/services_/human-centric-ai'
+      path: '/services/human-centric-ai'
+      fullPath: '/services/human-centric-ai'
+      preLoaderRoute: typeof ServicesHumanCentricAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services_/data-space/$slug': {
       id: '/services_/data-space/$slug'
       path: '/services/data-space/$slug'
@@ -139,6 +159,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
+  ServicesHumanCentricAiRoute: ServicesHumanCentricAiRoute,
   ServicesDataSpaceSlugRoute: ServicesDataSpaceSlugRoute,
   ServicesDppSlugRoute: ServicesDppSlugRoute,
 }

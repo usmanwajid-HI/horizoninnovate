@@ -76,7 +76,7 @@ function Services() {
                 return group.slug ? (
                   <Link
                     key={group.title}
-                    to="/services/dpp/$slug"
+                    to={service.id === "data-space" ? "/services/data-space/$slug" : "/services/dpp/$slug"}
                     params={{ slug: group.slug }}
                     className="glow-card group flex flex-col rounded-xl p-6"
                   >

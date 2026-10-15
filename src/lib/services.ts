@@ -147,9 +147,13 @@ export const services: Service[] = [
         slug: "value-added-data-computing-services",
         title: "Value-Added Data & Computing Services",
         intro: "Services built on top of the data space infrastructure to extract insights without compromising data sovereignty.",
-        items: ["Federated Learning & Privacy-Preserving Analytics"],
+        items: [
+          "Federated Learning & Privacy-Preserving Analytics",
+          "Data Apps & Application Integration",
+        ],
         details: [
           { name: "Federated Learning & Privacy-Preserving Analytics", description: "Implementing Secure Multi-Party Computation (SMC), Differential Privacy, or Federated AI engines that perform computations across node data without transferring raw underlying datasets." },
+          { name: "Data Apps & Application Integration", description: "Developing specialized business applications (e.g., carbon footprint calculators, predictive supply chain algorithms) that consume federated data streams." },
         ],
       },
     ],

@@ -84,35 +84,72 @@ export const services: Service[] = [
       "Design, launch, and operate trusted data-sharing ecosystems — governance, federation services, connectors, and day-to-day platform operations.",
     groups: [
       {
+        slug: "governance-ecosystem-legal-design",
         title: "Governance, Ecosystem Framing & Legal Design",
+        intro: "Establishing a data space begins with defining the legal rules, trust mechanisms, and business models that dictate how participants collaborate.",
         items: [
           "Governance Architecture",
           "Rulebook & Contractual Framework",
           "Business Model & Value Creation",
         ],
+        details: [
+          { name: "Governance Architecture", description: "Defining participation rules, organizational roles (Data Providers, Consumers, Intermediaries, Service Providers), and voting/decision-making frameworks." },
+          { name: "Rulebook & Contractual Framework", description: "Drafting legal agreements, standard data-sharing contracts, and Usage Policies (e.g., ODRL policy definitions specifying time, purpose, and pricing limits for data use)." },
+          { name: "Business Model & Value Creation", description: "Designing monetisation models (pay-per-use, subscription, freemium) and incentive mechanisms for participants to publish valuable data assets." },
+        ],
       },
       {
+        slug: "infrastructure-core-federation-services",
         title: "Infrastructure Setup & Core Federation Services",
+        intro: "Building the central federated trust layer that allows disparate participants to discover, trust, and execute data transactions.",
         items: [
           "Identity & Trust Services",
           "Catalog & Discovery Services",
           "Compliance & Clearing Houses",
         ],
+        details: [
+          { name: "Identity & Trust Services", description: "Deploying Decentralized Identifiers (DIDs), Verifiable Credentials (VCs), and Public Key Infrastructure (PKI) to manage trust, identity verification, and participant credentialing." },
+          { name: "Catalog & Discovery Services", description: "Deploying federated catalog services where data providers publish asset metadata so consumers can search and discover offerings." },
+          { name: "Compliance & Clearing Houses", description: "Implementing compliance engines that validate participants against specific framework standards (e.g., Gaia-X Trust Framework) and log transactions for auditing and settlement without seeing raw data." },
+        ],
       },
       {
+        slug: "participant-integration-connector-deployment",
         title: "Participant Integration & Connector Deployment",
+        intro: "Connecting individual enterprise systems (ERPs, Data Warehouses, IoT hubs) securely to the data space environment.",
         items: [
           "Data Space Connector Provisioning",
           "Control Plane vs. Data Plane Setup",
           "Data Harmonization & Semantic Mapping",
         ],
+        details: [
+          { name: "Data Space Connector Provisioning", description: "Deploying and configuring standard protocol connectors (e.g., Eclipse Dataspace Components / EDC, FIWARE, or IDSA Connectors) on participant premises or secure clouds." },
+          { name: "Control Plane vs. Data Plane Setup", description: "Setting up control mechanisms for policy negotiation alongside secure peer-to-peer data plane transport channels (HTTPS, S3, MQTT)." },
+          { name: "Data Harmonization & Semantic Mapping", description: "Mapping internal data schemas to common vocabulary standards (e.g., Asset Administration Shell, Schema.org) to ensure semantic interoperability between participants." },
+        ],
       },
       {
+        slug: "operational-management-platform-support",
         title: "Operational Management & Platform Support",
+        intro: "Ensuring high availability, security monitoring, and continuous participant onboarding across the live network.",
         items: [
           "Participant Onboarding & Verification",
-          "Network Operations & Security",
+          "Network Operations & Security (24/7)",
           "Policy Enforcement Auditing",
+        ],
+        details: [
+          { name: "Participant Onboarding & Verification", description: "Managing credential issuance, background checks, and automated onboarding workflows for new members." },
+          { name: "Network Operations & Security (24/7)", description: "Monitoring connector health, endpoint availability, credential revocation lists (CRLs), and zero-trust security postures." },
+          { name: "Policy Enforcement Auditing", description: "Providing transaction logging, usage policy enforcement verification, and dispute resolution technical evidence." },
+        ],
+      },
+      {
+        slug: "value-added-data-computing-services",
+        title: "Value-Added Data & Computing Services",
+        intro: "Services built on top of the data space infrastructure to extract insights without compromising data sovereignty.",
+        items: ["Federated Learning & Privacy-Preserving Analytics"],
+        details: [
+          { name: "Federated Learning & Privacy-Preserving Analytics", description: "Implementing Secure Multi-Party Computation (SMC), Differential Privacy, or Federated AI engines that perform computations across node data without transferring raw underlying datasets." },
         ],
       },
     ],

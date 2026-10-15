@@ -57,7 +57,7 @@ function Services() {
               {service.tagline}
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {service.groups.map((group) => {
+              {service.groups.map((group, groupIndex) => {
                 const body = (
                   <>
                     <h3 className="font-display text-base font-semibold leading-snug text-primary">
@@ -78,6 +78,19 @@ function Services() {
                     key={group.title}
                     to={service.id === "data-space" ? "/services/data-space/$slug" : "/services/dpp/$slug"}
                     params={{ slug: group.slug }}
+                    className="glow-card group flex flex-col rounded-xl p-6"
+                  >
+                    {body}
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-semibold text-primary">
+                      Learn more
+                      <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ) : service.id === "human-ai" ? (
+                  <Link
+                    key={group.title}
+                    to="/services/human-centric-ai"
+                    hash={`phase-${groupIndex + 1}`}
                     className="glow-card group flex flex-col rounded-xl p-6"
                   >
                     {body}

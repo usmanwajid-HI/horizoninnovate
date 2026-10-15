@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep service group content in `src/lib/services.ts` and use a dynamic detail route per service line so overview cards, detail pages, and next-page navigation share the same source.
+- Keep service group content in `src/lib/services.ts`; DPP and Data Space use dynamic group detail routes, while Human-Centric AI has one detail page covering all five phases, so overview cards and detail pages share the same source.

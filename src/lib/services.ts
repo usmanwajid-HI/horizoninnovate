@@ -16,6 +16,7 @@ export interface Service {
   number: string;
   title: string;
   tagline: string;
+  intro?: string;
   groups: ServiceGroup[];
 }
 
@@ -164,9 +165,16 @@ export const services: Service[] = [
     title: "Human-Centric AI",
     tagline:
       "Build AI systems people can understand, trust, and override — from cognitive task analysis to continuous human-AI teaming audits.",
+    intro: "Implementing Human-Centric AI (HCAI) focuses on augmenting human intelligence rather than replacing it. Our services ensure AI systems are transparent, ethically aligned, ergonomically integrated into human workflows, and compliant with evolving global regulations, such as the EU AI Act’s mandatory human oversight provisions.",
     groups: [
       {
         title: "Human Factors, Ergonomics & Impact Assessment",
+        intro: "Before deploying AI-driven decision tools, companies must understand how human operators make decisions and where cognitive strain or bias occurs.",
+        details: [
+          { name: "Cognitive Task Analysis & Workflow Mapping", description: "Mapping current human decision-making workflows to identify cognitive bottlenecks, information overload, and ideal intervention points for AI assistance." },
+          { name: "Ethical & Human Rights Impact Assessments", description: "Evaluating potential bias, discrimination, and psychological impact of automated recommendations on workforce and end-users." },
+          { name: "Regulatory Governance & Oversight Framing", description: "Classifying AI risk levels (e.g., EU AI Act high-risk categories) and establishing mandatory Human-in-the-Loop (HITL) or Human-on-the-Loop (HOTL) protocol boundaries." },
+        ],
         items: [
           "Cognitive Task Analysis & Workflow Mapping",
           "Ethical & Human Rights Impact Assessments",
@@ -174,7 +182,13 @@ export const services: Service[] = [
         ],
       },
       {
-        title: "Co-Design & Interaction Architecture",
+        title: "Co-Design & Interaction Architecture (UX/UI)",
+        intro: "HCAI services prioritize the interface between the algorithm and the operator, making model outputs understandable, actionable, and non-intrusive.",
+        details: [
+          { name: "Participatory Design Workshops", description: "Conducting co-design sessions involving domain experts (e.g., clinicians, underwriters, plant managers) to align model design with real-world needs." },
+          { name: "Explainable AI (XAI) Interface Design", description: "Building dashboards that explain why a decision was recommended (e.g., SHAP/LIME visualizers, feature importance charts, counterfactual reasoning)." },
+          { name: "Uncertainty & Confidence Visualization", description: "Designing UI elements that visually convey prediction confidence levels and error margins, preventing automation bias (blind trust) or automation distrust (system rejection)." },
+        ],
         items: [
           "Participatory Design Workshops",
           "Explainable AI (XAI) Interface Design",
@@ -183,6 +197,12 @@ export const services: Service[] = [
       },
       {
         title: "Decision Model Engineering & Alignment",
+        intro: "Developing and tuning analytical models specifically tailored to collaborate with human operators.",
+        details: [
+          { name: "Interactive Machine Learning & Human Feedback", description: "Embedding active learning loops where human corrections continuously fine-tune model accuracy and context-awareness." },
+          { name: "Context-Aware Decision Engines", description: "Integrating real-time contextual data (e.g., situational constraints, operator stress, shift changes) into the model’s recommendation logic." },
+          { name: "Guardrail & Safety Boundary Engineering", description: "Building deterministic rules and policy constraints into the AI pipeline to prevent harmful or out-of-bounds recommendations." },
+        ],
         items: [
           "Interactive Machine Learning & Human Feedback",
           "Context-Aware Decision Engines",
@@ -191,6 +211,12 @@ export const services: Service[] = [
       },
       {
         title: "Integration, Overrides & Governance Controls",
+        intro: "Connecting decision support algorithms into active enterprise IT systems with clear audit trails and control mechanics.",
+        details: [
+          { name: "System Integration", description: "Connecting decision engines with core operational software (e.g., EHR, CRM, MES, ERP) via real-time APIs to present insights directly inside existing toolsets." },
+          { name: "Override & Escalation Workflows", description: "Configuring friction-free mechanisms for human operators to reject or override AI recommendations, complete with reason-logging for continuous auditing." },
+          { name: "Auditability & Traceability Infrastructure", description: "Building logs that track model inputs, generated recommendations, and the final human action taken for legal compliance and accountability." },
+        ],
         items: [
           "System Integration",
           "Override & Escalation Workflows",
@@ -199,6 +225,12 @@ export const services: Service[] = [
       },
       {
         title: "Adoption, Workforce Upskilling & Continuous Auditing",
+        intro: "Ensuring operators are empowered to use AI effectively and monitoring the system’s long-term impact on operational outcomes.",
+        details: [
+          { name: "AI Literacy & Capability Training", description: "Upskilling non-technical staff on how to evaluate AI confidence, spot model hallucinations/biases, and effectively prompt or query decision tools." },
+          { name: "Continuous Human-AI Teaming Performance Audits", description: "Tracking performance metrics (e.g., decision speed, error rate reductions, operator satisfaction, override frequency) post-deployment." },
+          { name: "Model Drift & Human Adaptation Monitoring", description: "Continuously monitoring for model degradation and tracking how human behavior adapts over time to prevent over-reliance." },
+        ],
         items: [
           "AI Literacy & Capability Training",
           "Continuous Human-AI Teaming Performance Audits",

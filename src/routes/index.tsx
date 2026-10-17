@@ -1,3 +1,4 @@
+import { TopicIcon } from "@/components/TopicIcon";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Compass, Layers, Users } from "lucide-react";
 import { services } from "../lib/services";
@@ -107,7 +108,7 @@ function Index() {
           <div className="mt-16 grid gap-6 md:grid-cols-3">
             {pillars.map((p) => (
               <div key={p.title} className="glow-card rounded-xl p-6">
-                <p.icon className="text-primary" size={28} />
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-primary"><p.icon size={28} strokeWidth={1.75} /></span>
                 <h3 className="mt-4 font-display text-lg font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
               </div>
@@ -141,7 +142,7 @@ function Index() {
                 hash={s.id}
                 className="glow-card group rounded-xl p-6"
               >
-                <span className="font-mono text-sm text-primary">{s.number}</span>
+                <div className="flex items-center justify-between"><TopicIcon text={s.title} size="lg" /><span className="font-mono text-sm text-primary">{s.number}</span></div>
                 <h3 className="mt-3 font-display text-xl font-semibold">{s.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.tagline}</p>
                 <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">

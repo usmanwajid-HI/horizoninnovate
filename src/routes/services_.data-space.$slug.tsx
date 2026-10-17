@@ -1,3 +1,4 @@
+import { TopicIcon } from "@/components/TopicIcon";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,8 @@ function DataSpaceDetail() {
           <Link to="/services" hash="data-space" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
             <ArrowLeft size={16} /> Back to Data Space
           </Link>
-          <p className="section-tag mt-8">Data Space · {String(index + 1).padStart(2, "0")}</p>
+          <TopicIcon text={group.title} size="lg" className="mt-8" />
+          <p className="section-tag mt-6">Data Space · {String(index + 1).padStart(2, "0")}</p>
           <h1 className="mt-6 text-4xl font-bold md:text-5xl">{group.title}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{group.intro}</p>
         </div>
@@ -48,7 +50,8 @@ function DataSpaceDetail() {
         <div className="mx-auto grid max-w-4xl gap-6 px-6 py-16">
           {group.details?.map((detail, detailIndex) => (
             <div key={detail.name} className="glow-card rounded-lg p-6 md:p-8">
-              <div className="flex items-baseline gap-4">
+              <div className="flex items-center gap-4">
+                <TopicIcon text={detail.name} />
                 <span className="font-mono text-sm text-primary">{String(detailIndex + 1).padStart(2, "0")}</span>
                 <h2 className="font-display text-xl font-semibold">{detail.name}</h2>
               </div>

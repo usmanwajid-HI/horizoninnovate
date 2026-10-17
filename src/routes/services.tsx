@@ -1,3 +1,4 @@
+import { TopicIcon } from "@/components/TopicIcon";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { services } from "../lib/services";
@@ -47,7 +48,8 @@ function Services() {
           className={i % 2 === 1 ? "border-t border-border bg-surface" : "border-t border-border"}
         >
           <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-            <div className="flex flex-wrap items-baseline gap-4">
+            <div className="flex flex-wrap items-center gap-4">
+              <TopicIcon text={service.title} size="lg" />
               <span className="font-mono text-2xl text-primary">{service.number}</span>
               <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
                 {service.title}
@@ -60,6 +62,7 @@ function Services() {
               {service.groups.map((group, groupIndex) => {
                 const body = (
                   <>
+                    <TopicIcon text={group.title} className="mb-4" />
                     <h3 className="font-display text-base font-semibold leading-snug text-primary">
                       {group.title}
                     </h3>

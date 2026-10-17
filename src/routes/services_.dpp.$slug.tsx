@@ -1,3 +1,4 @@
+import { TopicIcon } from "@/components/TopicIcon";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { services } from "../lib/services";
@@ -44,7 +45,8 @@ function DppDetail() {
           >
             <ArrowLeft size={16} /> Back to Digital Product Passport
           </Link>
-          <p className="section-tag mt-8">Digital Product Passport · {String(index + 1).padStart(2, "0")}</p>
+          <TopicIcon text={group.title} size="lg" className="mt-8" />
+          <p className="section-tag mt-6">Digital Product Passport · {String(index + 1).padStart(2, "0")}</p>
           <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">{group.title}</h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{group.intro}</p>
         </div>
@@ -54,7 +56,8 @@ function DppDetail() {
         <div className="mx-auto grid max-w-4xl gap-6 px-6 py-16">
           {group.details?.map((d, i) => (
             <div key={d.name} className="glow-card rounded-xl p-6 md:p-8">
-              <div className="flex items-baseline gap-4">
+              <div className="flex items-center gap-4">
+                <TopicIcon text={d.name} />
                 <span className="font-mono text-sm text-primary">{String(i + 1).padStart(2, "0")}</span>
                 <h2 className="font-display text-xl font-semibold">{d.name}</h2>
               </div>

@@ -1,3 +1,4 @@
+import { TopicIcon } from "@/components/TopicIcon";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,8 @@ function HumanCentricAI() {
           <Link to="/services" hash="human-ai" className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
             <ArrowLeft size={16} /> Back to Services
           </Link>
-          <p className="section-tag mt-8">Our Services · {service.number}</p>
+          <TopicIcon text={service.title} size="lg" className="mt-8" />
+          <p className="section-tag mt-6">Our Services · {service.number}</p>
           <h1 className="mt-6 text-4xl font-bold md:text-5xl">{service.title}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{service.intro}</p>
         </div>
@@ -37,12 +39,14 @@ function HumanCentricAI() {
       {service.groups.map((group, index) => (
         <section key={group.title} id={`phase-${index + 1}`} className={`scroll-mt-24 border-b border-border ${index % 2 === 1 ? "bg-surface" : ""}`}>
           <div className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+            <TopicIcon text={group.title} size="lg" className="mb-4" />
             <p className="section-tag">Phase {String(index + 1).padStart(2, "0")}</p>
             <h2 className="mt-4 max-w-3xl font-display text-2xl font-bold md:text-3xl">{group.title}</h2>
             <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">{group.intro}</p>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {group.details?.map((detail) => (
                 <article key={detail.name} className="glow-card rounded-lg p-6">
+                  <TopicIcon text={detail.name} className="mb-4" />
                   <h3 className="font-display text-lg font-semibold leading-snug text-primary">{detail.name}</h3>
                   <p className="mt-4 leading-relaxed text-muted-foreground">{detail.description}</p>
                 </article>
